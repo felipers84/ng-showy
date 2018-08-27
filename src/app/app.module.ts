@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SlideComponent } from './slide/slide.component';
+import { PaginaslideComponent } from './paginaslide/paginaslide.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SlideComponent
+    SlideComponent,
+    PaginaslideComponent
   ],
   imports: [
     BrowserModule

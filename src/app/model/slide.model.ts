@@ -1,12 +1,12 @@
-export class SlideModel {
+export class Slide {
   titulo = '';
   imgSrc = '';
+  itens = new Array<ItemSlide>();
 }
 
 export class PaginaSlide {
-  slide = new SlideModel();
+  slide = new Slide();
   pagina = 0;
-  itens = new Array<ItemSlide>();
 }
 
 export abstract class ItemSlide {
