@@ -4,7 +4,7 @@ import { Apresentacao, Slide } from '../model/slide.model';
 @Component({
   selector: 'app-slide',
   templateUrl: './slide.component.html',
-  styleUrls: ['./slide.component.css']
+  styleUrls: ['./slide.component.scss']
 })
 export class SlideComponent implements OnInit {
 

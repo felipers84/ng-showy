@@ -1,0 +1,11 @@
+.presentation-container {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: transform .3s;
+  &.afastado {
+     transform: scale(0.8);
+   }
+}

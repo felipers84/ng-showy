@@ -4,10 +4,6 @@ export class Slide {
   itens = new Array<ItemSlide>();
 }
 
-export class PaginaSlide {
-  slide = new Slide();
-  pagina = 0;
-}
 
 export abstract class ItemSlide {
   ordem = 0;
@@ -22,6 +18,6 @@ export class Imagem extends ItemSlide {
 }
 
 export class Apresentacao {
-  public slides = new Array<PaginaSlide>();
+  public slides = new Array<Slide>();
   public possuiIndice = true;
 }

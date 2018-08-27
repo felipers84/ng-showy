@@ -1,0 +1,13 @@
+.slide {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  display:inline-block;
+  top: 0;
+  transition: transform .3s, opacity .3s;
+  perspective: 3000;
+  &.ativo {
+
+  }
+}
