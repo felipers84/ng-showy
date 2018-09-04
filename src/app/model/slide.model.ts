@@ -1,6 +1,7 @@
 export class Slide {
   titulo = '';
   imgSrc = '';
+  corHexadecimal = '';
   itens = new Array<ItemSlide>();
 }
 
