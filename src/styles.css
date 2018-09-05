@@ -4,3 +4,12 @@ html{
   white-space: nowrap;
   position: absolute;
 }
+
+.container-slide {
+  transition: transform .3s, opacity .3s;
+}
+.container-slide.oculto{
+  opacity: 0;
+
+}
+

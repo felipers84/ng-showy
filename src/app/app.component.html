@@ -2,7 +2,7 @@
 <div class="presentation-container">
 
 
-  <app-slide *ngFor="let slide of apresentacao.slides; let i = index" [slide]="slide">
+  <app-slide *ngFor="let slide of apresentacao.slides; let i = index" [slide]="slide" [ngClass]="classeSlide(i)">
 
 
   </app-slide>

@@ -1,16 +1,36 @@
-import { Component } from '@angular/core';
-import {Apresentacao, Slide, ListaTexto, Imagem} from './model/slide.model';
+import {Component, HostListener, ViewEncapsulation} from '@angular/core';
+import {Apresentacao, Imagem, ListaTexto, Slide} from './model/slide.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
 
   title = 'ng-showy';
 
   apresentacao = new Apresentacao();
+
+  numeroSlideAtual = 0;
+
+  @HostListener('document:keyup', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    console.log(event);
+    switch (event.key) {
+      case 'ArrowRight':
+        if (this.apresentacao.slides.length - 1 > this.numeroSlideAtual) {
+          this.numeroSlideAtual++;
+        }
+        break;
+      case 'ArrowLeft':
+        if (this.numeroSlideAtual > 0) {
+          this.numeroSlideAtual--;
+        }
+        break;
+    }
+  }
 
   ngOnInit(): void {
     const slide1 = new Slide();
@@ -30,6 +50,17 @@ export class AppComponent {
     slide2.itens.push(listaTexto1);
     slide2.itens.push(imagemSlide2);
     this.apresentacao.slides.push(slide1);
-    //this.apresentacao.slides.push(slide2);
+    this.apresentacao.slides.push(slide2);
+  }
+
+  public classeSlide(idx: number) {
+    if (idx === this.numeroSlideAtual) {
+      return 'container-slide';
+    }
+    if (idx > this.numeroSlideAtual) {
+      return 'container-slide oculto depois';
+    }
+
+    return 'container-slide oculto antes';
   }
 }
