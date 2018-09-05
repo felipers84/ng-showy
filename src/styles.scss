@@ -7,13 +7,48 @@ html {
 
 .container-slide {
   transition: transform .3s, opacity .4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+
   &.oculto {
-    transform: scale(2);
+    opacity: 0;
   }
   &.antes {
-    transform: translateX(-10px) scale(2);
+    transform: translateX(-100%);
   }
   &.depois {
-    transform: translateX(10px);
+    transform: translateX(100%);
   }
+
+
+
+  .slide {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    .titulo {
+      text-align: center;
+      height: 5vh;
+      flex-grow: 1;
+    }
+
+    .container-itens {
+      background-color: yellow;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 95vh;
+      padding: 5%;
+      box-sizing: border-box;
+      flex-grow: 10;
+    }
+  }
+
+
+
 }

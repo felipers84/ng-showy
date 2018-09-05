@@ -36,21 +36,26 @@ export class AppComponent {
     const slide1 = new Slide();
     slide1.titulo = 'Blábláblá';
     slide1.corHexadecimal = '#f00';
-    const listaTexto1 = new ListaTexto();
-    listaTexto1.textos.push('Tópico 1');
-    listaTexto1.textos.push('Tópico 2');
-    slide1.itens.push(listaTexto1);
+    slide1.itens.push(new ListaTexto('Tópico 1', 'Tópico 2'););
+    this.apresentacao.slides.push(slide1);
 
     const slide2 = new Slide();
     slide2.titulo = 'Blábláblá 2';
     slide2.corHexadecimal = '#0f0';
-    const imagemSlide2 = new Imagem();
-    imagemSlide2.imgSrc = `https://upload.wikimedia.org/wikipedia/commons/d/d9/São_Paulo_City.jpg`;
-    slide2.itens.push(imagemSlide2);
-    slide2.itens.push(listaTexto1);
-    slide2.itens.push(imagemSlide2);
-    this.apresentacao.slides.push(slide1);
+    slide2.itens.push(new Imagem(`https://upload.wikimedia.org/wikipedia/commons/d/d9/São_Paulo_City.jpg`));
+
+    slide2.itens.push(new Imagem(`https://upload.wikimedia.org/wikipedia/commons/d/d9/São_Paulo_City.jpg`));
+
     this.apresentacao.slides.push(slide2);
+
+    const slide3 = new Slide();
+    slide3.titulo = 'Terceiro slide';
+    slide3.corHexadecimal = '#f0f';
+    slide3.itens.push(new ListaTexto('Afinal, para que serve o Angular 6?', 'Ele poderá expandir minha mente?'));
+    slide3.itens.push(new Imagem('https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif'));
+    this.apresentacao.slides.push(slide3);
+
+
   }
 
   public classeSlide(idx: number) {
