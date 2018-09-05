@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+
+  white-space: nowrap;
+  position: absolute;
+}
+
+.container-slide {
+  transition: transform .3s, opacity .4s;
+  &.oculto {
+    transform: scale(2);
+  }
+  &.antes {
+    transform: translateX(-10px) scale(2);
+  }
+  &.depois {
+    transform: translateX(10px);
+  }
+}
