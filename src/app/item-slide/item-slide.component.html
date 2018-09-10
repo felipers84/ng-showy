@@ -3,4 +3,5 @@
 </div>
 <div *ngIf="getType === 'Imagem'" [ngClass]="item.visible ?  'item-slide item-slide-imagem' : 'item-slide item-slide-imagem hidden'"
   [ngStyle]="{'background-image': 'url(' + item.imgSrc + ')'}">
+  <img [src]="item.imgSrc" style="width: 100%" />
 </div>
