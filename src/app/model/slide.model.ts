@@ -8,6 +8,7 @@ export class Slide {
 
 export abstract class ItemSlide {
   ordem = 0;
+  visible = false;
 }
 
 export class Texto extends ItemSlide {

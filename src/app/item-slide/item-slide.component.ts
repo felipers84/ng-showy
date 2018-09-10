@@ -1,5 +1,5 @@
-import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
-import { ItemSlide, ListaTexto } from '../model/slide.model';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { ItemSlide, Texto } from '../model/slide.model';
 
 @Component({
   selector: 'app-item-slide',

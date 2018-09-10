@@ -1,4 +1,6 @@
-<ng-container *ngIf="getType === 'Texto'">
-  <span class="texto">{{item.texto}}</span>
-</ng-container>
-<img *ngIf="getType === 'Imagem'" class="item-slide-imagem" [src]="item.imgSrc" />
+<div *ngIf="getType === 'Texto'" [ngClass]="item.visible ?  'item-slide' : 'item-slide hidden'">
+  <span class="texto">{{ item.texto }}</span>
+</div>
+<div *ngIf="getType === 'Imagem'" [ngClass]="item.visible ?  'item-slide-imagem' : 'item-slide-imagem hidden'"
+  [ngStyle]="{'background': 'url(' + item.imgSrc + ')'}">
+</div>
