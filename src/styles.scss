@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 
-$transition-time: .6s;
+$transition-time: 1s;
 
 html {
 
@@ -10,13 +10,15 @@ html {
   position: absolute;
   overflow: hidden;
   perspective: 1500px;
+  background-color: black;
 }
 
 .container-slide {
-  transition: transform $transition-time, opacity $transition-time;
+  transition: transform $transition-time * 2, opacity $transition-time * 2;
   position: absolute;
   top: 0;
   left: 0;
+  transform-style: preserve-3d;
 
 
   &.oculto {
@@ -30,9 +32,6 @@ html {
   &.depois {
     transform: rotateY(-180deg) translateZ(-100px);
   }
-
-
-
 
 
   .slide {
@@ -56,7 +55,7 @@ html {
     }
 
     .container-itens {
-      background-color: yellow;
+      background-color: #333;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -74,10 +73,7 @@ html {
         transition: opacity $transition-time, transform $transition-time;
 
 
-        &.hidden {
-          transform: rotateY(90deg);
-          opacity: 0;
-        }
+
 
         .texto {
           background-color: white;
@@ -88,11 +84,28 @@ html {
           font-size: 5vw;
           font-weight: bolder;
           text-transform: uppercase;
+          transition: background-color $transition-time, color $transition-time;
+          word-break: break-word;
         }
 
         .item-slide-imagem {
-          flex-grow: 1
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          min-height: 100px;
+          flex-grow: 1;
         }
+
+        &.hidden {
+          transform: rotateY(90deg) translateZ(1500px);
+          opacity: 0;
+
+          .texto {
+            color: white;
+            background-color: #333;
+          }
+        }
+
       }
     }
   }

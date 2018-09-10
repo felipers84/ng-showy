@@ -56,20 +56,28 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+    const slide0 = new Slide();
+    //slide0.itens.push(new Texto('OOOOOOOOOOOOOOOOOOOOOOOOOOOOO'));
+    slide0.itens.push(new Imagem(`https://media.wired.com/photos/5955a88dad90646d424bb24f/master/w_582,c_limit/Untitled-1.jpg`));
+    this.apresentacao.slides.push(slide0);
+
+
     const slide1 = new Slide();
     slide1.titulo = 'HOJE VAMOS FALAR DE...';
     slide1.corHexadecimal = '#f00';
     slide1.itens.push(new Texto('Angular e tecnologias SPA'));
     slide1.itens.push(new Texto('NODEJS / EXPRESS / SOCKET.IO'));
     slide1.itens.push(new Texto('SCSS/UGLIFY/GULP'));
+    slide1.itens.push(new Imagem(`https://upload.wikimedia.org/wikipedia/commons/d/d9/São_Paulo_City.jpg`));
     this.apresentacao.slides.push(slide1);
 
     const slide2 = new Slide();
-    slide2.titulo = 'Blábláblá 2';
+    slide2.titulo = 'ANGULAR';
     slide2.corHexadecimal = '#0f0';
-    slide2.itens.push(new Imagem(`https://upload.wikimedia.org/wikipedia/commons/d/d9/São_Paulo_City.jpg`));
 
-    slide2.itens.push(new Imagem(`https://upload.wikimedia.org/wikipedia/commons/d/d9/São_Paulo_City.jpg`));
+    slide2.itens.push(new Texto('Desenvolvido pelo Google'));
+    slide2.itens.push(new Texto('Utiliza o conceito de SPA (Single Page Application)'));
+
 
     this.apresentacao.slides.push(slide2);
 
