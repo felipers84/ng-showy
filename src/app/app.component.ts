@@ -1,5 +1,5 @@
-import {Component, HostListener, ViewEncapsulation} from '@angular/core';
-import {Apresentacao, Imagem, ListaTexto, Slide} from './model/slide.model';
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
+import { Apresentacao, Imagem, Texto, Slide } from './model/slide.model';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +36,9 @@ export class AppComponent {
     const slide1 = new Slide();
     slide1.titulo = 'Blábláblá';
     slide1.corHexadecimal = '#f00';
-    slide1.itens.push(new ListaTexto('Tópico 1', 'Tópico 2'););
+    slide1.itens.push(new Texto('Tópico 1'));
+    slide1.itens.push(new Texto('Tópico 2'));
+    slide1.itens.push(new Texto('Tópico 3'));
     this.apresentacao.slides.push(slide1);
 
     const slide2 = new Slide();
@@ -51,10 +53,9 @@ export class AppComponent {
     const slide3 = new Slide();
     slide3.titulo = 'Terceiro slide';
     slide3.corHexadecimal = '#f0f';
-    slide3.itens.push(new ListaTexto('Afinal, para que serve o Angular 6?', 'Ele poderá expandir minha mente?'));
+    slide3.itens.push(new Texto('Afinal, para que serve o Angular 6?'));
     slide3.itens.push(new Imagem('https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif'));
     this.apresentacao.slides.push(slide3);
-
 
   }
 

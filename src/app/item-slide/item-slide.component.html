@@ -1,4 +1,4 @@
-<ng-container *ngIf="getType === 'ListaTexto'">
-  <div *ngFor="let itemLista of item.textos">{{ itemLista }}</div>
+<ng-container *ngIf="getType === 'Texto'">
+  <span class="texto">{{item.texto}}</span>
 </ng-container>
 <img *ngIf="getType === 'Imagem'" class="item-slide-imagem" [src]="item.imgSrc" />

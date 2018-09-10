@@ -10,13 +10,12 @@ export abstract class ItemSlide {
   ordem = 0;
 }
 
-export class ListaTexto extends ItemSlide {
-  public textos = new Array<String>();
+export class Texto extends ItemSlide {
+  public texto = '';
 
-  constructor(primeiroTexto: string, ...demaisTextos: string[]) {
+  constructor(texto: string) {
     super();
-    this.textos.push(primeiroTexto);
-    demaisTextos.forEach(texto => this.textos.push(texto));
+    this.texto = texto;
   }
 }
 

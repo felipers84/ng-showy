@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
 html {
 
   white-space: nowrap;
   position: absolute;
+  overflow: hidden;
 }
 
 .container-slide {
@@ -14,12 +18,16 @@ html {
   &.oculto {
     opacity: 0;
   }
+
   &.antes {
     transform: translateX(-100%);
   }
+
   &.depois {
     transform: translateX(100%);
   }
+
+
 
 
 
@@ -31,10 +39,12 @@ html {
     display: flex;
     flex-direction: column;
 
+
+
     .titulo {
       text-align: center;
       height: 5vh;
-      flex-grow: 1;
+      max-height: 5vh;
     }
 
     .container-itens {
@@ -43,11 +53,34 @@ html {
       flex-direction: column;
       justify-content: space-around;
       height: 95vh;
+      min-height: 95vh;
       padding: 5%;
       box-sizing: border-box;
-      flex-grow: 10;
+
+      .item-slide {
+
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+
+        .texto {
+          background-color: white;
+          box-shadow: rgba(0, 0, 0, .5) 10px 10px 0px;
+          color: #333;
+          padding: 10px;
+          font-family: 'open sans';
+          font-size: 50px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        .item-slide-imagem {}
+      }
     }
   }
+
+
 
 
 
