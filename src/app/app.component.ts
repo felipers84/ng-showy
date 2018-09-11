@@ -25,6 +25,9 @@ export class AppComponent {
   set numeroSlideAtual(valor: number) {
     this._numeroSlideAtual = valor;
     this.ocultarTodosOsItensDeTodosOsSlides();
+    if (this.apresentacao.slides[this._numeroSlideAtual].itens.length === 1) {
+      this.apresentacao.slides[this._numeroSlideAtual].itens[0].visible = true;
+    }
   }
 
   get numeroSlideAtual(): number {
@@ -61,7 +64,6 @@ export class AppComponent {
 
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    console.log(event);
     switch (event.key) {
       case 'ArrowRight':
         if (!this.ExibirProximoItemSlide(this._numeroSlideAtual)) {
