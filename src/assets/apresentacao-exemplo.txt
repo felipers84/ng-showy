@@ -1,9 +1,26 @@
+[NO-TITLE]
+- WEB
 ASSUNTOS {"corHexadecimal":"#ff0000"}
 - nodeJs
 - angular
 - socket.io
+- Docker
 NodeJS
-- blábláblá 1
-- blábláblá 2
+- servidor javascript
+- interpretador V8
+Ryan Dahl
+(i)https://upload.wikimedia.org/wikipedia/commons/b/b2/Ryan_Dahl.jpg
+Vantagens
+- todo desenvolvimento em js
+- diversas bibliotecas
+- roda em qualquer S.O.
+- roda em Windows também
+angular
+- usa nodejs para desenvolvimento
+- single page application
+- programação reativa
+angular
+- typescript => javascript
+- usado para front-end
 [NO-TITLE]
 (i)https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif {"visible":true}
