@@ -1,11 +1,13 @@
-import { Component, HostListener, ViewEncapsulation } from '@angular/core';
-import { Apresentacao, Imagem, Texto, Slide } from './model/slide.model';
+import {Component, HostListener, ViewEncapsulation} from '@angular/core';
+import {Apresentacao, Imagem, Texto, Slide} from './model/slide.model';
+import {TxtPresentationParserService} from "./txt-presentation-parser.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  providers: [TxtPresentationParserService]
 })
 export class AppComponent {
 
@@ -14,6 +16,10 @@ export class AppComponent {
   apresentacao = new Apresentacao();
 
   private _numeroSlideAtual = 0;
+
+  constructor(private txtPresentationParser: TxtPresentationParserService) {
+
+  }
 
 
   set numeroSlideAtual(valor: number) {
@@ -32,39 +38,9 @@ export class AppComponent {
 
       reader.onload = () => {
 
-        const textoApresentacao = reader.result + '\n';
+        this.apresentacao = this.txtPresentationParser.parsearApresentacao(reader.result);
 
-        const regexParentesesFinalLinha = /#[0-9abcdefABCDEF]*$/;
-
-        const apresentacao = new Apresentacao();
-        console.log('apresentacao', apresentacao);
-
-        textoApresentacao.split('\n').filter(l => l).forEach(linha => {
-          if (linha.substring(0, 3) === '(i)') {
-            apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Imagem(linha.substring(3)));
-          } else if (linha.substring(0, 2) === '- ') {
-            apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Texto(linha.substring(2)));
-          } else if (linha === '[NO-TITLE]') {
-            apresentacao.slides.push(new Slide(''));
-          } else {
-
-            let matches = regexParentesesFinalLinha.exec(linha);
-
-            if (matches && matches.length > 0) {
-              const novoSlide = new Slide(linha.replace(regexParentesesFinalLinha, ''));
-              novoSlide.corHexadecimal = matches[0];
-              apresentacao.slides.push(novoSlide);
-            } else {
-              apresentacao.slides.push(new Slide(linha));
-            }
-          }
-        });
-
-        this.apresentacao = apresentacao;
-
-
-      }
-
+      };
 
       reader.readAsText(input.files[index]);
     }

@@ -1,4 +1,4 @@
-ASSUNTOS #f00
+ASSUNTOS {"corHexadecimal":"#ff0000"}
 - nodeJs
 - angular
 - socket.io
@@ -6,4 +6,4 @@ NodeJS
 - blábláblá 1
 - blábláblá 2
 [NO-TITLE]
-(i)https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif
+(i)https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif {"visible":true}
