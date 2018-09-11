@@ -1,11 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
-
 $transition-time: 1s;
 
 html {
-
   white-space: nowrap;
   position: absolute;
   overflow: hidden;
@@ -20,7 +17,6 @@ html {
   left: 0;
   transform-style: preserve-3d;
 
-
   &.oculto {
     opacity: 0;
   }
@@ -33,16 +29,12 @@ html {
     transform: rotateY(-180deg) translateZ(-100px);
   }
 
-
   .slide {
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
-
     display: flex;
     flex-direction: column;
-
-
 
     .titulo {
       text-align: center;
@@ -52,6 +44,7 @@ html {
       color: #eee;
       text-shadow: rgba(0, 0, 0, .8) 1px 1px 1px;
       margin: 1%;
+      flex-grow: 1;
     }
 
     .container-itens {
@@ -59,21 +52,17 @@ html {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-
-      height: 95vh;
+      flex-grow: 10;
       padding: 5%;
       box-sizing: border-box;
 
       .item-slide {
-
         text-align: center;
         justify-content: space-around;
         align-items: center;
         display: flex;
+        line-break: normal;
         transition: opacity $transition-time, transform $transition-time;
-
-
-
 
         .texto {
           background-color: white;
@@ -85,7 +74,7 @@ html {
           font-weight: bolder;
           text-transform: uppercase;
           transition: background-color $transition-time, color $transition-time;
-          word-break: break-word;
+          width: 100%;
         }
 
         .item-slide-imagem {
@@ -105,13 +94,7 @@ html {
             background-color: #333;
           }
         }
-
       }
     }
   }
-
-
-
-
-
 }

@@ -1,6 +1,6 @@
 <div class="slide" [ngStyle]="{'background-color': slide.corHexadecimal }">
-  <h1 class="titulo">{{ slide.titulo }} </h1>
+  <h1 *ngIf="slide.titulo" class="titulo">{{ slide.titulo }} </h1>
   <div class="container-itens">
-    <app-item-slide *ngFor="let item of itensSlide" [item]="item" class="item-slide"></app-item-slide>
+    <app-item-slide *ngFor="let item of itensSlide" [item]="item"></app-item-slide>
   </div>
 </div>

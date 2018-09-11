@@ -52,14 +52,16 @@ export class AppComponent {
           this.numeroSlideAtual--;
         }
         break;
+
     }
   }
+
 
   ngOnInit(): void {
     const slide0 = new Slide();
     //slide0.itens.push(new Texto('OOOOOOOOOOOOOOOOOOOOOOOOOOOOO'));
     slide0.itens.push(new Imagem(`https://media.wired.com/photos/5955a88dad90646d424bb24f/master/w_582,c_limit/Untitled-1.jpg`));
-    this.apresentacao.slides.push(slide0);
+    // this.apresentacao.slides.push(slide0);
 
 
     const slide1 = new Slide();
@@ -69,7 +71,7 @@ export class AppComponent {
     slide1.itens.push(new Texto('NODEJS / EXPRESS / SOCKET.IO'));
     slide1.itens.push(new Texto('SCSS/UGLIFY/GULP'));
     slide1.itens.push(new Imagem(`https://upload.wikimedia.org/wikipedia/commons/d/d9/São_Paulo_City.jpg`));
-    this.apresentacao.slides.push(slide1);
+    // this.apresentacao.slides.push(slide1);
 
     const slide2 = new Slide();
     slide2.titulo = 'ANGULAR';
@@ -87,7 +89,12 @@ export class AppComponent {
     slide3.itens.push(new Texto('Afinal...'));
     slide3.itens.push(new Texto('Para que serve o Angular 6?'));
     slide3.itens.push(new Imagem('https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif'));
-    this.apresentacao.slides.push(slide3);
+    // this.apresentacao.slides.push(slide3);
+
+
+    this._numeroSlideAtual = 0;
+    this.ocultarTodosOsItensDeTodosOsSlides();
+    this.apresentacao.slides[this._numeroSlideAtual].itens.forEach(item => item.visible = true);
 
   }
 

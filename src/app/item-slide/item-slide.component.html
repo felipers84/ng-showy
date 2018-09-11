@@ -1,5 +1,6 @@
-<div *ngIf="getType === 'Texto'" [ngClass]="item.visible ?  'item-slide' : 'item-slide hidden'">
+<div *ngIf="getType === 'Texto'" [ngClass]="item.visible ?  'item-slide item-slide-texto' : 'item-slide item-slide-texto hidden'">
   <span class="texto">{{ item.texto }}</span>
+
 </div>
 <div *ngIf="getType === 'Imagem'" [ngClass]="item.visible ?  'item-slide item-slide-imagem' : 'item-slide item-slide-imagem hidden'"
   [ngStyle]="{'background-image': 'url(' + item.imgSrc + ')'}">
