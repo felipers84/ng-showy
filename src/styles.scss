@@ -24,10 +24,18 @@ html {
 
   &.antes {
     transform: rotateY(180deg) translateZ(100px);
+
   }
 
   &.depois {
     transform: rotateY(-180deg) translateZ(-100px);
+
+  }
+
+  &.antes, &.depois {
+    .titulo {
+      transform: translateY(-200px);
+    }
   }
 
   .slide {
@@ -46,6 +54,7 @@ html {
       text-shadow: rgba(0, 0, 0, .8) 1px 1px 1px;
       margin: 1%;
       flex-grow: 1;
+      transition: transform $transition-time;
     }
 
     .container-itens {
