@@ -1,6 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="presentation-container">
 
+<div class="upload-container" *ngIf="!apresentacao">
+  <input type='file' accept='text/plain' multiple (change)='parsearApresentacao($event)'>
+</div>
+
+<div class="presentation-container" *ngIf="apresentacao">
 
   <app-slide *ngFor="let slide of apresentacao.slides; let i = index" [slide]="slide" [ngClass]="classeSlide(i)">
 

@@ -1,0 +1,9 @@
+ASSUNTOS #00ff00
+- nodeJs
+- angular
+- socket.io
+NodeJS
+- blábláblá 1
+- blábláblá 2
+SLIDE 3
+(i)https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif

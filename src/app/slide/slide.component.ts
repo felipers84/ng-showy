@@ -13,7 +13,7 @@ export class SlideComponent implements OnInit {
 
 
   @Input()
-  public slide = new Slide();
+  public slide = new Slide('');
 
   public get itensSlide() {
     return this.slide.itens.sort((a, b) => a.ordem - b.ordem);

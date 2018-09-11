@@ -1,5 +1,5 @@
-import { Component, HostListener, ViewEncapsulation } from '@angular/core';
-import { Apresentacao, Imagem, Texto, Slide } from './model/slide.model';
+import {Component, HostListener, ViewEncapsulation} from '@angular/core';
+import {Apresentacao, Imagem, Texto, Slide} from './model/slide.model';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,7 @@ export class AppComponent {
 
   private _numeroSlideAtual = 0;
 
+
   set numeroSlideAtual(valor: number) {
     this._numeroSlideAtual = valor;
     this.ocultarTodosOsItensDeTodosOsSlides();
@@ -22,6 +23,49 @@ export class AppComponent {
 
   get numeroSlideAtual(): number {
     return this._numeroSlideAtual;
+  }
+
+  parsearApresentacao(event) {
+    let input = event.target;
+    for (var index = 0; index < input.files.length; index++) {
+      let reader = new FileReader();
+
+      reader.onload = () => {
+
+        var textoApresentacao = reader.result + '\n';
+        const regexParentesesFinalLinha = /#[0-9abcdefABCDEF]*\n/;
+
+        const apresentacao = new Apresentacao();
+        console.log('apresentacao', apresentacao);
+
+        textoApresentacao.split('\n').forEach(linha => {
+          if (linha.substring(0, 3) === '(i)') {
+            apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Imagem(linha.substring(3)));
+          }
+          else if (linha.substring(0, 2) === '- ') {
+            apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Texto(linha.substring(2)));
+          } else {
+            var matches = regexParentesesFinalLinha.exec(linha);
+            console.log(linha);
+            if (matches && matches.length > 0) {
+              const novoSlide = new Slide(linha.replace(regexParentesesFinalLinha, ''));
+              novoSlide.corHexadecimal = matches[0];
+              apresentacao.slides.push(novoSlide);
+            } else {
+              apresentacao.slides.push(new Slide(linha));
+            }
+          }
+        });
+
+        this.apresentacao = apresentacao;
+
+
+      }
+
+
+      reader.readAsText(input.files[index]);
+    }
+    ;
   }
 
   private ocultarTodosOsItensDeTodosOsSlides() {
@@ -58,23 +102,20 @@ export class AppComponent {
 
 
   ngOnInit(): void {
-    const slide0 = new Slide();
-    //slide0.itens.push(new Texto('OOOOOOOOOOOOOOOOOOOOOOOOOOOOO'));
+    const slide0 = new Slide('');
     slide0.itens.push(new Imagem(`https://media.wired.com/photos/5955a88dad90646d424bb24f/master/w_582,c_limit/Untitled-1.jpg`));
-    // this.apresentacao.slides.push(slide0);
+    this.apresentacao.slides.push(slide0);
 
 
-    const slide1 = new Slide();
-    slide1.titulo = 'HOJE VAMOS FALAR DE...';
+    const slide1 = new Slide('HOJE VAMOS FALAR DE...');
     slide1.corHexadecimal = '#f00';
     slide1.itens.push(new Texto('Angular e tecnologias SPA'));
     slide1.itens.push(new Texto('NODEJS / EXPRESS / SOCKET.IO'));
     slide1.itens.push(new Texto('SCSS/UGLIFY/GULP'));
     slide1.itens.push(new Imagem(`https://upload.wikimedia.org/wikipedia/commons/d/d9/São_Paulo_City.jpg`));
-    // this.apresentacao.slides.push(slide1);
+    this.apresentacao.slides.push(slide1);
 
-    const slide2 = new Slide();
-    slide2.titulo = 'ANGULAR';
+    const slide2 = new Slide('ANGULAR');
     slide2.corHexadecimal = '#0f0';
 
     slide2.itens.push(new Texto('Desenvolvido pelo Google'));
@@ -83,18 +124,21 @@ export class AppComponent {
 
     this.apresentacao.slides.push(slide2);
 
-    const slide3 = new Slide();
-    slide3.titulo = 'Terceiro slide';
+    const slide3 = new Slide('Terceiro slide');
     slide3.corHexadecimal = '#f0f';
     slide3.itens.push(new Texto('Afinal...'));
     slide3.itens.push(new Texto('Para que serve o Angular 6?'));
     slide3.itens.push(new Imagem('https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif'));
-    // this.apresentacao.slides.push(slide3);
+    this.apresentacao.slides.push(slide3);
 
 
     this._numeroSlideAtual = 0;
     this.ocultarTodosOsItensDeTodosOsSlides();
     this.apresentacao.slides[this._numeroSlideAtual].itens.forEach(item => item.visible = true);
+
+    console.log('apresentacao', JSON.stringify(this.apresentacao));
+    this.apresentacao = null;
+
 
   }
 

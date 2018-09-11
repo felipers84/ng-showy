@@ -3,6 +3,10 @@ export class Slide {
   imgSrc = '';
   corHexadecimal = '';
   itens = new Array<ItemSlide>();
+  constructor(titulo: string) {
+    this.titulo = titulo;
+    this.corHexadecimal = '#555555';
+  }
 }
 
 
@@ -34,4 +38,7 @@ export class Imagem extends ItemSlide {
 export class Apresentacao {
   public slides = new Array<Slide>();
   public possuiIndice = true;
+  constructor() {
+    this.slides = new Array<Slide>();
+  }
 }
