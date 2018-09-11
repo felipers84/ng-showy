@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
 $transition-time: 1s;
 
 html {
@@ -56,42 +57,47 @@ html {
       padding: 5%;
       box-sizing: border-box;
 
-      .item-slide {
-        text-align: center;
-        justify-content: space-around;
-        align-items: center;
+      app-item-slide {
         display: flex;
-        line-break: normal;
-        transition: opacity $transition-time, transform $transition-time;
-
-        .texto {
-          background-color: white;
-          box-shadow: rgba(0, 0, 0, .5) 3px 3px 0px;
-          color: #333;
-          padding: 10px;
-          font-family: 'open sans';
-          font-size: 5vw;
-          font-weight: bolder;
-          text-transform: uppercase;
-          transition: background-color $transition-time, color $transition-time;
+        text-align: center;
+        flex-grow: 1;
+        .item-slide {
+          text-align: center;
+          justify-content: space-around;
+          align-items: center;
+          display: flex;
+          line-break: normal;
+          transition: opacity $transition-time, transform $transition-time;
           width: 100%;
-        }
-
-        .item-slide-imagem {
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-          min-height: 100px;
-          flex-grow: 1;
-        }
-
-        &.hidden {
-          transform: rotateY(90deg) translateZ(1500px);
-          opacity: 0;
-
           .texto {
-            color: white;
-            background-color: #333;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, .5) 3px 3px 0px;
+            color: #333;
+            padding: 10px;
+            font-family: 'open sans';
+            font-size: 5vw;
+            font-weight: bolder;
+            text-transform: uppercase;
+            transition: background-color $transition-time, color $transition-time;
+            width: 100%;
+          }
+
+          &.item-slide-imagem {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100px;
+            flex-grow: 1;
+          }
+
+          &.hidden {
+            transform: rotateY(90deg) translateZ(1500px);
+            opacity: 0;
+
+            .texto {
+              color: white;
+              background-color: #333;
+            }
           }
         }
       }

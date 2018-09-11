@@ -39,11 +39,13 @@ export class AppComponent {
         const apresentacao = new Apresentacao();
         console.log('apresentacao', apresentacao);
 
-        textoApresentacao.split('\n').forEach(linha => {
+        textoApresentacao.split('\n').filter(l => l).forEach(linha => {
           if (linha.substring(0, 3) === '(i)') {
             apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Imagem(linha.substring(3)));
           } else if (linha.substring(0, 2) === '- ') {
             apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Texto(linha.substring(2)));
+          } else if (linha === '[NO-TITLE]') {
+            apresentacao.slides.push(new Slide(''));
           } else {
 
             let matches = regexParentesesFinalLinha.exec(linha);
