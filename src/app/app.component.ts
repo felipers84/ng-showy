@@ -1,5 +1,5 @@
-import {Component, HostListener, ViewEncapsulation} from '@angular/core';
-import {Apresentacao, Imagem, Texto, Slide} from './model/slide.model';
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
+import { Apresentacao, Imagem, Texto, Slide } from './model/slide.model';
 
 @Component({
   selector: 'app-root',
@@ -32,8 +32,9 @@ export class AppComponent {
 
       reader.onload = () => {
 
-        var textoApresentacao = reader.result + '\n';
-        const regexParentesesFinalLinha = /#[0-9abcdefABCDEF]*\n/;
+        const textoApresentacao = reader.result + '\n';
+
+        const regexParentesesFinalLinha = /#[0-9abcdefABCDEF]*$/;
 
         const apresentacao = new Apresentacao();
         console.log('apresentacao', apresentacao);
@@ -41,12 +42,12 @@ export class AppComponent {
         textoApresentacao.split('\n').forEach(linha => {
           if (linha.substring(0, 3) === '(i)') {
             apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Imagem(linha.substring(3)));
-          }
-          else if (linha.substring(0, 2) === '- ') {
+          } else if (linha.substring(0, 2) === '- ') {
             apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Texto(linha.substring(2)));
           } else {
-            var matches = regexParentesesFinalLinha.exec(linha);
-            console.log(linha);
+
+            let matches = regexParentesesFinalLinha.exec(linha);
+
             if (matches && matches.length > 0) {
               const novoSlide = new Slide(linha.replace(regexParentesesFinalLinha, ''));
               novoSlide.corHexadecimal = matches[0];
