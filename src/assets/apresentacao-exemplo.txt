@@ -4,7 +4,8 @@ ASSUNTOS {"corHexadecimal":"#ff0000"}
 - NodeJS
 - Angular
 - Socket.io
-(i)https://rishabh.io/tech/nodejs/img/nodejs.png
+[NO-TITLE]
+(i)/assets/node_logo.png
 NodeJS
 - JS server-side
 - interpretador V8
@@ -13,7 +14,8 @@ NodeJS
 - diversas bibliotecas
 - roda em qualquer SO
 - em Windows também
-(i)https://pt.wikipedia.org/wiki/Angular_(plataforma_de_aplica%C3%A7%C3%B5es)#/media/File:Angular_full_color_logo.svg
+[NO-TITLE]
+(i)/assets/angular_logo.svg
 Angular
 - framework dev. nodejs
 - single page application
@@ -23,9 +25,12 @@ Angular
 - usado para front-end
 - deploy em js/html
 - qualquer servidor aplicação
-(i)https://cdn-images-1.medium.com/max/800/1*J6XjrA6Zb6TwzQ-imPVc_A.png
+[NO-TITLE]
+(i)/assets/socket.io.logo.png
 Socket.IO
 - Tempo real na web
 - Bi-direcional
 [NO-TITLE]
-(i)https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif {"visible":true}
+- Vamos expandir a mente?
+[NO-TITLE]
+(i)/assets/mindblow.webp {"visible":true}
