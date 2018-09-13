@@ -1,26 +1,31 @@
 [NO-TITLE]
-- WEB
+- CHAT com node/ng/socket
 ASSUNTOS {"corHexadecimal":"#ff0000"}
-- nodeJs
-- angular
-- socket.io
-- Docker
+- NodeJS
+- Angular
+- Socket.io
+(i)https://rishabh.io/tech/nodejs/img/nodejs.png
 NodeJS
-- servidor javascript
+- JS server-side
 - interpretador V8
-Ryan Dahl
-(i)https://upload.wikimedia.org/wikipedia/commons/b/b2/Ryan_Dahl.jpg
-Vantagens
+NodeJS
 - todo desenvolvimento em js
 - diversas bibliotecas
-- roda em qualquer S.O.
-- roda em Windows também
-angular
-- usa nodejs para desenvolvimento
+- roda em qualquer SO
+- em Windows também
+(i)https://pt.wikipedia.org/wiki/Angular_(plataforma_de_aplica%C3%A7%C3%B5es)#/media/File:Angular_full_color_logo.svg
+Angular
+- framework dev. nodejs
 - single page application
 - programação reativa
-angular
-- typescript => javascript
+- desacoplada do back
+Angular
 - usado para front-end
+- deploy em js/html
+- qualquer servidor aplicação
+(i)https://cdn-images-1.medium.com/max/800/1*J6XjrA6Zb6TwzQ-imPVc_A.png
+Socket.IO
+- Tempo real na web
+- Bi-direcional
 [NO-TITLE]
 (i)https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif {"visible":true}
