@@ -1,4 +1,4 @@
-<div class="slide" [ngStyle]="{'background-color': slide.corHexadecimal }">
+<div class="slide" [ngStyle]="{'background-color': slide.corHexadecimal, 'background-url': slide.backgroundUrl }">
   <h1 *ngIf="slide.titulo" class="titulo">{{ slide.titulo }} </h1>
   <div class="container-itens">
     <app-item-slide *ngFor="let item of itensSlide" [item]="item"></app-item-slide>

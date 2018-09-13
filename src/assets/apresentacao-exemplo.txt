@@ -1,36 +1,34 @@
 [NO-TITLE]
-- CHAT com node/ng/socket
-ASSUNTOS {"corHexadecimal":"#ff0000"}
 - NodeJS
 - Angular
 - Socket.io
 [NO-TITLE]
 (i)/assets/node_logo.png
-NodeJS
+NodeJS {"background-url":"https://media.giphy.com/media/l2QEj7ksEKw8Ten6M/giphy.gif"}
 - JS server-side
 - interpretador V8
-NodeJS
+NodeJS {"corHexadecimal":"#6cc24a"}
 - todo desenvolvimento em js
 - diversas bibliotecas
 - roda em qualquer SO
 - em Windows também
 [NO-TITLE]
 (i)/assets/angular_logo.svg
-Angular
+Angular {"corHexadecimal":"#b52e31"}
 - framework dev. nodejs
 - single page application
 - programação reativa
 - desacoplada do back
-Angular
+Angular {"corHexadecimal":"#b52e31"}
 - usado para front-end
-- deploy em js/html
+- deploy em js/html/css
 - qualquer servidor aplicação
 [NO-TITLE]
 (i)/assets/socket.io.logo.png
-Socket.IO
+Socket.IO {"corHexadecimal":"#ddd"}
 - Tempo real na web
 - Bi-direcional
 [NO-TITLE]
 - Vamos expandir a mente?
 [NO-TITLE]
-(i)/assets/mindblow.webp {"visible":true}
+(i)/assets/mindblow.gif {"visible":true}

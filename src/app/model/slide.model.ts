@@ -2,6 +2,7 @@ export class Slide {
   titulo = '';
   imgSrc = '';
   corHexadecimal = '';
+  backgroundUrl = '';
   itens = new Array<ItemSlide>();
   constructor(titulo: string) {
     this.titulo = titulo;

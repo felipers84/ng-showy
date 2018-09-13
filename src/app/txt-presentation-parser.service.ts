@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Apresentacao, Imagem, Slide, Texto} from "./model/slide.model";
+import { Injectable } from '@angular/core';
+import { Apresentacao, Imagem, Slide, Texto } from "./model/slide.model";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class TxtPresentationParserService {
 
     conteudoTexto.split('\n').filter(l => l).forEach(linha => {
       if (linha.substring(0, 3) === '(i)') {
-        const novaImagem = new Imagem(linha.substring(3).replace(regexParametros,''));
+        const novaImagem = new Imagem(linha.substring(3).replace(regexParametros, ''));
 
         const parametrosImagem = regexParametros.exec(linha);
         if ((parametrosImagem || []).length === 1) {
@@ -37,9 +37,10 @@ export class TxtPresentationParserService {
 
         const parametros = regexParametros.exec(linha);
 
-        if ((parametros || []).length=== 1) {
+        if ((parametros || []).length === 1) {
           const propriedades = JSON.parse(parametros[0]);
           novoSlide.corHexadecimal = propriedades.corHexadecimal || novoSlide.corHexadecimal;
+          novoSlide.backgroundUrl = propriedades.backgroundUrl || novoSlide.backgroundUrl;
         }
 
         apresentacao.slides.push(novoSlide);

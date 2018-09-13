@@ -32,7 +32,8 @@ html {
 
   }
 
-  &.antes, &.depois {
+  &.antes,
+  &.depois {
     .titulo {
       transform: translateY(-200px);
     }
@@ -44,6 +45,8 @@ html {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-size: cover;
+    background-position: center;
 
     .titulo {
       text-align: center;
@@ -70,6 +73,7 @@ html {
         display: flex;
         text-align: center;
         flex-grow: 1;
+
         .item-slide {
           text-align: center;
           justify-content: space-around;
@@ -78,6 +82,7 @@ html {
           line-break: normal;
           transition: opacity $transition-time, transform $transition-time;
           width: 100%;
+
           .texto {
             background-color: white;
             box-shadow: rgba(0, 0, 0, .5) 3px 3px 0px;
