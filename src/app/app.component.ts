@@ -1,6 +1,6 @@
-import {Component, HostListener, ViewEncapsulation} from '@angular/core';
-import {Apresentacao, Imagem, Texto, Slide} from './model/slide.model';
-import {TxtPresentationParserService} from "./txt-presentation-parser.service";
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
+import { Apresentacao, Imagem, Texto, Slide } from './model/slide.model';
+import { TxtPresentationParserService } from "./txt-presentation-parser.service";
 
 @Component({
   selector: 'app-root',
@@ -25,8 +25,9 @@ export class AppComponent {
   set numeroSlideAtual(valor: number) {
     this._numeroSlideAtual = valor;
     this.ocultarTodosOsItensDeTodosOsSlides();
-    if (this.apresentacao.slides[this._numeroSlideAtual].itens.length === 1) {
-      this.apresentacao.slides[this._numeroSlideAtual].itens[0].visible = true;
+    // tslint:disable-next-line:max-line-length
+    if (this.apresentacao.slides[this._numeroSlideAtual].mostrarTodosOsItens || this.apresentacao.slides[this._numeroSlideAtual].itens.length === 1) {
+      this.apresentacao.slides[this._numeroSlideAtual].itens.forEach(item => item.visible = true);
     }
   }
 

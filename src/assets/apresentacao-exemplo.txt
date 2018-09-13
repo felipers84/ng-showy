@@ -1,10 +1,10 @@
-[NO-TITLE]
+[NO-TITLE] {"mostrarTodosOsItens":true}
 - NodeJS
 - Angular
 - Socket.io
 [NO-TITLE]
 (i)/assets/node_logo.png
-NodeJS {"background-url":"https://media.giphy.com/media/l2QEj7ksEKw8Ten6M/giphy.gif"}
+NodeJS {"corHexadecimal":"#6cc24a"}
 - JS server-side
 - interpretador V8
 NodeJS {"corHexadecimal":"#6cc24a"}
@@ -31,4 +31,7 @@ Socket.IO {"corHexadecimal":"#ddd"}
 [NO-TITLE]
 - Vamos expandir a mente?
 [NO-TITLE]
-(i)/assets/mindblow.gif {"visible":true}
+(i)/assets/mindblow.gif
+[NO-TITLE] {"mostrarTodosOsItens":true}
+(i)/assets/programador.jpg
+- Parabéns programadores!

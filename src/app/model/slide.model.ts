@@ -4,6 +4,7 @@ export class Slide {
   corHexadecimal = '';
   backgroundUrl = '';
   itens = new Array<ItemSlide>();
+  mostrarTodosOsItens = false;
   constructor(titulo: string) {
     this.titulo = titulo;
     this.corHexadecimal = '#555555';

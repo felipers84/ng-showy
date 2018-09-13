@@ -29,8 +29,6 @@ export class TxtPresentationParserService {
         apresentacao.slides[apresentacao.slides.length - 1].itens.push(novaImagem);
       } else if (linha.substring(0, 2) === '- ') {
         apresentacao.slides[apresentacao.slides.length - 1].itens.push(new Texto(linha.substring(2)));
-      } else if (linha === '[NO-TITLE]') {
-        apresentacao.slides.push(new Slide(''));
       } else {
 
         const novoSlide = new Slide(linha.replace(regexParametros, ''));
@@ -41,6 +39,11 @@ export class TxtPresentationParserService {
           const propriedades = JSON.parse(parametros[0]);
           novoSlide.corHexadecimal = propriedades.corHexadecimal || novoSlide.corHexadecimal;
           novoSlide.backgroundUrl = propriedades.backgroundUrl || novoSlide.backgroundUrl;
+          novoSlide.mostrarTodosOsItens = propriedades.mostrarTodosOsItens || novoSlide.mostrarTodosOsItens;
+        }
+
+        if (linha.substring(0, 10) === '[NO-TITLE]') {
+          novoSlide.titulo = '';
         }
 
         apresentacao.slides.push(novoSlide);
